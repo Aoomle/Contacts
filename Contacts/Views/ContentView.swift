@@ -26,7 +26,7 @@ struct ContentView: View {
                   TextField("search", text: $searchText, onEditingChanged: { isEditing in
                       self.showCancelButton = true
                   }, onCommit: {
-                      print("onCommit")
+                     // print("onCommit")
                   }).foregroundColor(.primary)
 
                   Button(action: {
@@ -50,7 +50,8 @@ struct ContentView: View {
               }
           }
           .padding(.horizontal)
-          .navigationBarHidden(showCancelButton) // .animation(.default) // animation does not work properly
+          .navigationBarHidden(showCancelButton) // .
+              .animation(.default) // animation does not work properly
 
             List(contactStore.contacts.filter{$0.name.hasPrefix(searchText) || searchText == "" }) { contact in
             Text(contact.name)
