@@ -9,13 +9,16 @@
 import SwiftUI
 
 struct ContentView: View {
+  var contactStore: ContactStore
     var body: some View {
-        Text("Hello, World!")
+      List(contactStore.contacts) { contact in
+        Text(contact.name)
+      }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+      ContentView( contactStore: ContactStore() )
     }
 }
