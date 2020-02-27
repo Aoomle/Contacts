@@ -11,8 +11,22 @@ import SwiftUI
 struct ContentView: View {
   var contactStore: ContactStore
     var body: some View {
-      List(contactStore.contacts) { contact in
-        Text(contact.name)
+      NavigationView {
+        List(contactStore.contacts) { contact in
+          Text(contact.name)
+        }
+        .navigationBarTitle("Contact")
+        .navigationBarItems(
+          leading:
+            Button("Groups"){
+        },
+          trailing:
+          Button(
+            action: {}
+          ){
+            Image(systemName: "plus")
+          }
+        )
       }
     }
 }
