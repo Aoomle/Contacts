@@ -23,7 +23,7 @@ struct ContentView: View {
               HStack {
                   Image(systemName: "magnifyingglass")
 
-                  TextField("search", text: $searchText, onEditingChanged: { isEditing in
+                  TextField("Search", text: $searchText, onEditingChanged: { isEditing in
                       self.showCancelButton = true
                   }, onCommit: {
                      // print("onCommit")
