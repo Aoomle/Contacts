@@ -9,8 +9,28 @@
 import SwiftUI
 
 struct ProfileCreatorView: View {
+  @State var text = ""
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+      VStack {
+        Form  {
+          HStack(alignment: .center) {
+            Button("Cancel"){
+              
+            }
+            .disabled(true)
+            
+            VStack {
+              Text("New Contact")
+            }
+            
+            Button("Done"){
+              
+            }
+         
+          }
+          TextField("First Name", text: $text)
+        }
+      }
     }
 }
 
