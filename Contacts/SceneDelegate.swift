@@ -25,10 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
       
       // Create the SwiftUI view that provides the window contents.
-      let contentView = Groups()
-        
-        //ContentView( contactStore: ContactStore() )
-
+        let contentView = ContentView( contactStore: ContactStore()  )
       window.rootViewController = UIHostingController(rootView: contentView)
         self.window = window
         window.makeKeyAndVisible()

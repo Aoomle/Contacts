@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct Groups: View {
-  @State var isDismiss = false
+  @Environment(\.presentationMode) var presentationMode
     var body: some View {
       NavigationView {
         Form{
@@ -20,10 +20,8 @@ struct Groups: View {
               
           .navigationBarTitle("Groups", displayMode: .inline)
           .navigationBarItems(trailing:
-            Button(
-              action: {   }
-            ){
-              Text("Done")
+            Button("Done"){
+              self.presentationMode.wrappedValue.dismiss()
             })
         }
         .padding(.top, 20)

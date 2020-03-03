@@ -11,6 +11,8 @@ import SwiftUI
 struct ContentView: View {
   @State private var searchText = ""
   @State private var showCancelButton: Bool = false
+  @State private var modelIsPresented = false
+  @State private var modelSelection = 1
   
   var contactStore: ContactStore
     var body: some View {
@@ -61,16 +63,30 @@ struct ContentView: View {
           .navigationBarTitle("Contact")
           .navigationBarItems(
             leading:
-              Button("Groups"){ },
+              Button("Groups"){
+                self.modelSelection = 1
+                self.modelIsPresented = true
+            },
             trailing:
               Button(
-              action: {}
+              action: {
+                self.modelSelection = 2
+                self.modelIsPresented = true
+              }
               ){
               Image(systemName: "plus")
             }
           )
       }
     }
+        .sheet(isPresented: $modelIsPresented){
+          if self.modelSelection == 1 {
+            Groups()
+          }
+          if self.modelSelection == 2 {
+            ProfileCreatorView()
+          }
+      }
   }
 }
 
