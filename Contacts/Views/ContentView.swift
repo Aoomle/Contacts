@@ -57,9 +57,10 @@ struct ContentView: View {
 				.navigationBarItems(
 						leading:
               Button("Groups"){
+								
                 self.modelSelection = 1
                 self.modelIsPresented = true
-            },
+							}.frame(maxHeight: 20),
             trailing:
               Button(
               action: {
@@ -68,6 +69,7 @@ struct ContentView: View {
               }
               ){
               Image(systemName: "plus")
+								.frame(maxHeight: 20)
             }
 				)
       }
